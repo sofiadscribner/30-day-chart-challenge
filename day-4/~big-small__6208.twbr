@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1211.0901                               -->
+<workbook original-version='18.1' source-build='2024.3.2 (20243.24.1211.0901)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='tarriffs' inline='true' name='federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='tarriffs' name='textscan.0doowtw1nbvqkt19u8rei1wn4fql'>
+            <connection class='textscan' directory='Data' filename='tarriffs.txt' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0doowtw1nbvqkt19u8rei1wn4fql' name='tarriffs.txt' table='[tarriffs#txt]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='country' ordinal='0' />
+            <column datatype='real' name='pcgdp' ordinal='1' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[tarriffs.txt]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[tarriffs.txt]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[tarriffs.txt_1823F80FB47E4DDBA846F40380FB38F5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pcgdp</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[pcgdp]</local-name>
+            <parent-name>[tarriffs.txt]</parent-name>
+            <remote-alias>pcgdp</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[tarriffs.txt_1823F80FB47E4DDBA846F40380FB38F5]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='tarriffs.txt' datatype='table' name='[__tableau_internal_object_id__].[tarriffs.txt_1823F80FB47E4DDBA846F40380FB38F5]' role='measure' type='quantitative' />
+      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:country:nk]' palette='red_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;678.2&quot;</bucket>
+            </map>
+            <map to='#e13b42'>
+              <bucket>&quot;south sudan&quot;</bucket>
+            </map>
+            <map to='#f05c4d'>
+              <bucket>&quot;Burundi&quot;</bucket>
+            </map>
+            <map to='#f05c4d'>
+              <bucket>&quot;South Sudan&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;united states&quot;</bucket>
+            </map>
+            <map to='#fa8f79'>
+              <bucket>&quot;Liechtenstein&quot;</bucket>
+            </map>
+            <map to='#ffbeb2'>
+              <bucket>&quot;400.2&quot;</bucket>
+            </map>
+            <map to='#ffbeb2'>
+              <bucket>&quot;Luxembourg&quot;</bucket>
+            </map>
+            <map to='#ffbeb2'>
+              <bucket>&quot;United States&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='tarriffs.txt' id='tarriffs.txt_1823F80FB47E4DDBA846F40380FB38F5'>
+            <properties context=''>
+              <relation connection='textscan.0doowtw1nbvqkt19u8rei1wn4fql' name='tarriffs.txt' table='[tarriffs#txt]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='country' ordinal='0' />
+                  <column datatype='real' name='pcgdp' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Per Capita GDP in USD'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='tarriffs' name='federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column datatype='real' name='[pcgdp]' role='measure' type='quantitative' />
+            <column-instance column='[pcgdp]' derivation='Sum' name='[sum:pcgdp:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j].[sum:pcgdp:qk]' value='c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j].[sum:pcgdp:qk]' />
+              <color column='[federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j].[none:country:nk]' />
+              <text column='[federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j].[none:country:nk]' />
+              <text column='[federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j].[sum:pcgdp:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <annotations>
+          <annotation class='point' id='2' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run bold='true'>South Sudan $334</run>
+              <run>Æ&#10;</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields />
+                      <y-fields />
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j].[none:country:nk]</field>
+                      <field>[federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j].[sum:pcgdp:qk]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>&quot;south sudan&quot;</value>
+                    <value>334.13999999999999</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='74' y='-256' />
+          </annotation>
+          <annotation class='point' id='3' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run bold='true'>South Sudan $334</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields />
+                      <y-fields />
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j].[none:country:nk]</field>
+                      <field>[federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j].[sum:pcgdp:qk]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>&quot;South Sudan&quot;</value>
+                    <value>334.13999999999999</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='72' y='-101' />
+          </annotation>
+          <annotation class='point' id='4' mark-position='1' pullback='12' text-width='180'>
+            <formatted-text>
+              <run bold='true'>Burundi</run>
+              <run>Æ&#10;</run>
+              <run bold='true'>$193</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields />
+                      <y-fields />
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j].[none:country:nk]</field>
+                      <field>[federated.1x7b5ji1vc14nv1h2dk2g1ns0p0j].[sum:pcgdp:qk]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>&quot;Burundi&quot;</value>
+                    <value>193.0</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='-58' y='-140' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{4175642A-4E25-4956-A3BE-6D47BEBED507}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones />
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='6' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='5' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{B321637C-32A4-47DB-91A4-53788B00D5E7}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Per Capita GDP in USD'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C19D4D54-2F51-4AD0-9742-D0C7D89DD2A9}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{0AE0D3D7-7563-4ED9-A9B3-E6CB08A9F28B}' />
+    </window>
+  </windows>
+</workbook>
