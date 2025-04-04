@@ -1,0 +1,4 @@
+country, pcgdp
+United States, 82769.4
+Burundi, 193.0
+Liechtenstein, 186400.2
