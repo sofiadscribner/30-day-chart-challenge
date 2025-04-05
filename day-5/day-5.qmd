@@ -5,23 +5,46 @@ format: docx
 editor: visual
 ---
 
-## Quarto
+```{r setup, message=FALSE}
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+# load packages and read in data
 
-## Running Code
+library(tidyverse)
+library(ggplot2)
+library(ggimage)
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
+byu <- read.csv('byu_degrees.csv')
 ```
 
-You can add options to executable code like this
-
 ```{r}
-#| echo: false
-2 * 2
+
+# filter the data for the plot
+
+byu <- byu |>
+  arrange(desc(Percent)) |>
+  slice(1:5) |>
+  mutate(Category = reorder(Category, -Percent))
+  
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+```{r}
+
+# create bar plot
+
+ggplot(byu, aes(x = Percent, y = reorder(Category,Percent))) +
+  geom_col(fill = '#082b62') +
+    geom_text(aes(label = sprintf("%.1f%%", Percent)), 
+            hjust = -0.05, color = 'black', size = 4) + 
+  labs(title = "Top 5 Most Popular Undergraduate Degree Disciplines at BYU", x= "Percent of Degrees Awarded", y = '') +
+  xlim(0, 15)+
+  theme_minimal()+
+  geom_image(
+    aes(image = 'byu-logo.jpg'), 
+    size = 0.45, 
+    data = tibble(Percent = 13, Category = 'Social sciences')
+  )
+
+# save locally
+
+ggsave('byu_plot.png', bg = 'white')
+```
