@@ -1,0 +1,6 @@
+Response, Percent
+Strongly disapprove, -39
+Somewhat disapprove, -11
+Not sure, 0
+Somewhat approve, 18
+Strongly approve, 21
