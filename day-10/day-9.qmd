@@ -1,0 +1,67 @@
+---
+title: "Day 10"
+author: "Sofia Scribner"
+format: html
+editor: visual
+---
+
+## Day 10 - "Multi-Modal"
+
+```{r setup, message=FALSE}
+
+# load packages
+
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r}
+
+# read in data
+
+life <- read_table("LifeExpectancy.txt", show_col_types = F)
+
+life <- life |> select(-Row) |>
+  mutate(Country = as.factor(Country), 
+         Group = as.factor(Group))
+
+summary(life)
+```
+
+```{r}
+
+# visualize data
+
+plot <- ggplot(data = life, aes(x = LifeExp, fill = Group)) +
+  geom_density(alpha = 0.7) +
+  scale_fill_manual(
+    values = c(
+      "africa" = "cornflowerblue",
+      "oecd" = "#9CAF88",
+      "other" = "darkgrey"
+    ),
+    labels = c(
+      "africa" = "Africa",
+      "oecd" = "OECD",
+      "other" = "Other"
+    )
+  ) +
+  labs(
+    title = "Density Plot of Life Expectancy by Country Group",
+    x = "Life Expectancy",
+    y = "Density",
+    fill = "Country Group"
+  ) +
+  theme_minimal()+
+  theme(plot.background = element_rect(fill = "white"))
+
+plot
+
+```
+
+```{r}
+
+# save locally
+
+ggsave("life.png", plot = plot, width = 8, height = 6)
+```
