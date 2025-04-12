@@ -1,0 +1,92 @@
+---
+title: "Day 11"
+author: "Sofia Scribner"
+format: docx
+editor: visual
+---
+
+## 30 Day Chart Challenge Day 11 - "Stripes"
+
+```{r setup, message = FALSE}
+
+# load packages and data
+
+library(tidyverse)
+library(ggplot2)
+library(RColorBrewer)
+
+ut_drought <- read_csv('utah_drought.csv', show_col_types = F) |>
+  rename('Level' = 'D0-D4')|>
+  select(Week, Level)
+```
+
+```{r}
+
+# create the plt formatting using Dr Dominic Royé's tutorial
+
+theme_strip <- function(){ 
+  
+  theme_minimal() %+replace%
+    theme(
+      axis.text.y = element_blank(),
+      axis.line.y = element_blank(),
+      axis.title = element_blank(),
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      legend.title = element_blank(),
+      axis.text.x = element_text(vjust = 5, margin = margin(t = 10)),
+      plot.title = element_text(size = 14, face = "bold"),
+      legend.key.width = unit(.5, "lines"),
+      plot.margin = margin(t = 10, r = 10, b = 30, l = 10)
+    )
+}
+
+col_strip <- brewer.pal(11, "Oranges")
+
+# all 
+brewer.pal.info
+```
+
+```{r}
+
+# create the plot using Dr Dominic Royé's tutorial
+
+maxmin <- range(ut_drought$Level)
+md <- mean(ut_drought$Level)
+
+plot <- ggplot(
+  ut_drought,
+  aes(Week, y = 1, fill = Level)
+) +
+  geom_tile(height = 0.0005) +
+  scale_x_date(
+    date_breaks = "4 years",
+    date_labels = "%Y",
+    expand = c(0, 0)
+  ) +
+  scale_fill_gradientn(colors = col_strip, values = scales::rescale(c(maxmin[1], md, maxmin[2])),
+                       na.value = "gray80") +
+  labs(
+    title = "% of Utah in Some Level of Drought 2000-2025",
+    caption = "Data: U.S. Drought Moniter"
+  ) +
+  coord_cartesian(expand = FALSE) +
+  theme_strip()+
+  theme(
+  plot.title = element_text(
+    size = 14,
+    face = "bold",
+    margin = margin(b = 10)
+  )
+)
+
+plot
+```
+
+```{r}
+
+# save locally
+
+ggsave("stripes.png", plot = plot, bg = "white", width = 12)
+
+```
